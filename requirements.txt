@@ -1,0 +1,7 @@
+flask
+requests
+numpy
+scikit-learn
+gensim
+pandas
+decouple

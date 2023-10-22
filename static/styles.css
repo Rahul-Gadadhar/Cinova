@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f0f0;
+    color: #333333;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 600px;
+    margin: 120px auto 50px; /* Updated margin values (top, right, bottom) */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+form input, form select, .container form button {
+    width: 97%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #777777;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.container form button {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0; /* Reset margin to zero */
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.container form button:hover {
+    background-color: #0056b3;
+}
+
+.recommendations li, .movie-details li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations h2, .movie-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.recommendations ul, .movie-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recommendations li p, .movie-details li p {
+    margin-bottom: 10px;
+}
+
+.thumbnail {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.thumbnail img {
+    max-width: 100%;
+    height: auto;
+}
+
+.top-header {
+    background-color: #000000; /* Change to your desired background color */
+    color: #db0000; /* Change to your desired text color */
+    padding: 0px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; /* Ensures it's above other content */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+	font-weight: bold; /* Make the text thicker and bolder */
+}
+#logo {
+    width: auto; /* Adjust this value to your desired width */
+    height: 90px; /* Automatically adjust height to maintain aspect ratio */
+}
+
+.movie-details-info p {
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.movie-details-info strong {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Style subheadings with the "subheading" class */
+.subheading {
+    font-weight: bold;
+}
+/* Header styling */
+.top-header {
+    background-color: #000000;
+    color: #db0000;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+/* Center the image both horizontally and vertically */
+#logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 50%;
+}

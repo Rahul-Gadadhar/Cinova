@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Suggestion System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Add the header -->
+    <header class="top-header">
+		<img id="logo" src="static/logo.png" alt="Cinova Logo">
+	</header>
+
+    <div class="container">
+        <header>
+            <h1>Movie Suggestion System</h1>
+        </header>
+        <form action="/recommend" method="post">
+			<label for="num_suggestions">Number of suggestions:</label>
+            <input type="number" id="num_suggestions" name="num_suggestions" required placeholder="(required)" min="1">
+			
+            <label for="query_description">Enter your emotion:</label>
+            <input type="text" id="query_description" name="query_description" required placeholder="(required)"><br>
+
+            <label for="actor">Actor's Name:</label>
+            <input type="text" id="actor" name="actor" placeholder="(optional)"><br>
+
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" placeholder="(optional)"><br>
+
+            <label for="rate">Minimum IMDb Rating:</label>
+            <input type="number" id="rate" name="rate" placeholder="(optional)" min="0" max="10"><br>
+
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        {% if movie_details %}
+        <section class="movie-details">
+            <h1><u>Movie Details:</u></h1>
+            <ul>
+                {% for movie_data in movie_details %}
+                <li>
+                    <div class="movie-item">
+                        <div class="thumbnail">
+                            <img src="{{ movie_data.poster_url }}" alt="{{ movie_data.title }} Poster">
+                        </div>
+                        <div class="movie-details-info">
+							<h2>{{ loop.index }}. {{ movie_data.title }}</h2>
+							<p><strong class="subheading">Release Date:</strong> {{ movie_data.release_date }}</p>
+							<p><strong>IMDb Rating:</strong> {{ "%.1f" | format(movie_data.vote_average) }}</p>
+							<p><strong class="subheading">Cast: </strong>{{ movie_data.cast }}</p>
+							<p><strong class="subheading">Duration:</strong> {{ movie_data.runtime }} minutes</p>
+							<p><strong class="subheading">Description:</strong> {{ movie_data.overview }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+    </div>
+</body>
+</html>
