@@ -4,4 +4,4 @@ numpy
 scikit-learn
 gensim
 pandas
-decouple
+python-decouple
